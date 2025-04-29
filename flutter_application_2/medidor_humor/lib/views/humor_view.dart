@@ -28,8 +28,24 @@ class _HumorViewState extends State<HumorView> {
                 size: 450,
                 color: const Color.fromARGB(255, 0, 0, 0),
               ),
-              Text('Feliz'),
-              Text('Nível: 7')
+              Text('Feliz', style: TextStyle(fontSize: 50)),
+              Text('Nível: 7', style: TextStyle(fontSize: 50)),
+              Row(
+                children: [
+                  TextButton(
+                    onPressed: () {
+                      print("Dimunuir");
+                    },
+                    child: Text('Diminuir humor'),
+                  ),
+                  TextButton(
+                    onPressed: () {
+                      print("Aumentar");
+                    },
+                    child: Text('Aumentar humor'),
+                  ),
+                ],
+              ),
             ],
           ),
         ),
