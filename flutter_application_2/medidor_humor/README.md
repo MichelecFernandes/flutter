@@ -1,16 +1,14 @@
+# Iniciar projeto flutter
+Ctrl + Shift + P -> Flutter: New project - > Application
+
 # medidor_humor
 
 A new Flutter project.
 
-## Getting Started
+## Explicações durante a aula
 
-This project is a starting point for a Flutter application.
+Existem 2 wigets:
 
-A few resources to get you started if this is your first Flutter project:
+stles - é o widget que nao vai ter seu estado alterado em tempo de execução - Widget estático
 
-- [Lab: Write your first Flutter app](https://docs.flutter.dev/get-started/codelab)
-- [Cookbook: Useful Flutter samples](https://docs.flutter.dev/cookbook)
-
-For help getting started with Flutter development, view the
-[online documentation](https://docs.flutter.dev/), which offers tutorials,
-samples, guidance on mobile development, and a full API reference.
+stful: permite a alteração de estado em tempo de execução - Widget dinâmico
