@@ -14,11 +14,25 @@ class _HumorViewState extends State<HumorView> {
     return Scaffold(
       appBar: AppBar(
         title: Text('Medidor de Humor'),
-        backgroundColor: const Color.fromARGB(255, 4, 138, 115),
-        foregroundColor: const Color.fromARGB(255, 4, 138, 115),
+        backgroundColor: const Color.fromARGB(255, 0, 0, 0),
+        foregroundColor: const Color.fromARGB(255, 255, 255, 255),
       ),
       body: Center(
-        
+        child: Padding(
+          padding: EdgeInsets.all(16),
+          child: Column(
+            mainAxisAlignment: MainAxisAlignment.center,
+            children: [
+              Icon(
+                Icons.emoji_emotions,
+                size: 450,
+                color: const Color.fromARGB(255, 0, 0, 0),
+              ),
+              Text('Feliz'),
+              Text('Nível: 7')
+            ],
+          ),
+        ),
       ),
     );
   }
