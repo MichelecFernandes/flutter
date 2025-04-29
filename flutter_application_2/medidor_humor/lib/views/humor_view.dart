@@ -31,6 +31,7 @@ class _HumorViewState extends State<HumorView> {
               Text('Feliz', style: TextStyle(fontSize: 50)),
               Text('Nível: 7', style: TextStyle(fontSize: 50)),
               Row(
+                mainAxisAlignment: MainAxisAlignment.spaceAround,
                 children: [
                   TextButton(
                     onPressed: () {
