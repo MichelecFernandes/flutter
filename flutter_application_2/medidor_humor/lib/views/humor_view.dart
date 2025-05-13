@@ -12,6 +12,19 @@ class _HumorViewState extends State<HumorView> {
 
   final HumorController _humorController = HumorController();
 
+  IconData? _obterIcone(String status){
+    switch(status){
+      case 'Feliz':
+        return Icons.sentiment_very_satisfied;
+      case 'Neutro':
+        return Icons.sentiment_neutral;
+      case 'Triste':
+        return Icons.sentiment_dissatisfied;  
+      default:
+        return Icons.disabled_by_default;
+    }
+  }
+
   @override
   Widget build(BuildContext context) {
     /*Scaffold-> formato de tela que ajuda a encaixar os widgets de formna mais organizada na tela*/
