@@ -1,6 +1,6 @@
 # Iniciar projeto flutter
 Ctrl + Shift + P -> Flutter: New project - > Application
-
+Alt + Shift + F -> Para formatr o codigo
 # medidor_humor
 
 A new Flutter project.
