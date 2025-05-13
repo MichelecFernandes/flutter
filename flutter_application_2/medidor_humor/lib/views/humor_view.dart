@@ -41,7 +41,7 @@ class _HumorViewState extends State<HumorView> {
             mainAxisAlignment: MainAxisAlignment.center,
             children: [
               Icon(
-                Icons.emoji_emotions,
+                _obterIcone(_humorController.status),
                 size: 450,
                 color: const Color.fromARGB(255, 0, 0, 0),
               ),
