@@ -4,4 +4,12 @@ class HumorController {
   final Humor _humor =  Humor();
   // Getter para o nivel do humor
   int get nivel => _humor.getNivel();
+
+  void aumentar(){
+    _humor.aumentar();
+  }
+
+  void diminuir(){
+    _humor.diminuir();
+  }
 }
