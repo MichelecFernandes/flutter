@@ -5,6 +5,11 @@ class HumorController {
   // Getter para o nivel do humor
   int get nivel => _humor.getNivel();
 
+
+  // Getter para status de humor
+  String get status => _humor.status;
+
+  
   void aumentar(){
     _humor.aumentar();
   }
@@ -12,4 +17,5 @@ class HumorController {
   void diminuir(){
     _humor.diminuir();
   }
+
 }

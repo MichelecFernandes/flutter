@@ -32,7 +32,8 @@ class _HumorViewState extends State<HumorView> {
                 size: 450,
                 color: const Color.fromARGB(255, 0, 0, 0),
               ),
-              Text('Feliz', style: TextStyle(fontSize: 50)),
+              Text(_humorController.status,
+               style: TextStyle(fontSize: 50)),
               Text('Nível de humor: ${_humorController.nivel}', style: TextStyle(fontSize: 50)),
               Row(
                 mainAxisAlignment: MainAxisAlignment.spaceAround,

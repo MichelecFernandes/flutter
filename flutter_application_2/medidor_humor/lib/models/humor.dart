@@ -13,4 +13,10 @@ class Humor{
     _nivel--;
   }
 
+  
+  // Getter para o nivel de humor
+  String get status => _nivel >= 7 ? 'Feliz' : _nivel >= 4 ? 'Neutro' : 'Triste';
+
+
+
 }
