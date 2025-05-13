@@ -15,3 +15,11 @@ stful: permite a alteração de estado em tempo de execução - Widget dinâmico
 
 # Comandos
 flutter pub get - para baixar todas as dependecias do projeto
+
+# Atributos privados
+Tem o anderlaine antes
+_nivel
+
+# Atributos publicos
+Nao tem o anderlaine antes
+nivel 
