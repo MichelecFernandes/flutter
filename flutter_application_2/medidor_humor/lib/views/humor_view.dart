@@ -39,7 +39,9 @@ class _HumorViewState extends State<HumorView> {
                 children: [
                   TextButton(
                     onPressed: () {
+                      setState(() {
                       _humorController.diminuir();
+                      });
                       print(_humorController.nivel);
                       print("Diminuir");
                     },
@@ -47,7 +49,9 @@ class _HumorViewState extends State<HumorView> {
                   ),
                   TextButton(
                     onPressed: () {
+                      setState(() {
                       _humorController.aumentar();
+                      });
                       print(_humorController.nivel);
                       print("Aumentar");
                     },

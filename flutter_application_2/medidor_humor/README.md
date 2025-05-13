@@ -23,3 +23,6 @@ _nivel
 # Atributos publicos
 Nao tem o anderlaine antes
 nivel 
+
+# Atualizar a pagina(tipo F5)
+setState - responsavel por atualizar a pagina a cada atualizacao
