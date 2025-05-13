@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:medidor_humor/controllers/humor_controller.dart';
 
 class HumorView extends StatefulWidget {
   const HumorView({super.key});
@@ -8,6 +9,9 @@ class HumorView extends StatefulWidget {
 }
 
 class _HumorViewState extends State<HumorView> {
+
+  final HumorController _humorController = HumorController();
+
   @override
   Widget build(BuildContext context) {
     /*Scaffold-> formato de tela que ajuda a encaixar os widgets de formna mais organizada na tela*/
@@ -29,18 +33,22 @@ class _HumorViewState extends State<HumorView> {
                 color: const Color.fromARGB(255, 0, 0, 0),
               ),
               Text('Feliz', style: TextStyle(fontSize: 50)),
-              Text('Nível: 7', style: TextStyle(fontSize: 50)),
+              Text('Nível de humor: ${_humorController.nivel}', style: TextStyle(fontSize: 50)),
               Row(
                 mainAxisAlignment: MainAxisAlignment.spaceAround,
                 children: [
                   TextButton(
                     onPressed: () {
-                      print("Dimunuir");
+                      _humorController.diminuir();
+                      print(_humorController.nivel);
+                      print("Diminuir");
                     },
                     child: Text('Diminuir humor'),
                   ),
                   TextButton(
                     onPressed: () {
+                      _humorController.aumentar();
+                      print(_humorController.nivel);
                       print("Aumentar");
                     },
                     child: Text('Aumentar humor'),
