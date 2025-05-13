@@ -47,7 +47,11 @@ class _HumorViewState extends State<HumorView> {
               ),
               Text(_humorController.status,
                style: TextStyle(fontSize: 50)),
-              Text('Nível de humor: ${_humorController.nivel}', style: TextStyle(fontSize: 50)),
+              Text('Nível de humor: ${_humorController.nivel}', 
+              style: TextStyle(fontSize: 50)),
+              SizedBox(
+                height: 30,
+              ),
               Row(
                 mainAxisAlignment: MainAxisAlignment.spaceAround,
                 children: [
@@ -59,6 +63,13 @@ class _HumorViewState extends State<HumorView> {
                       print(_humorController.nivel);
                       print("Diminuir");
                     },
+                    style: TextButton.styleFrom(
+                      backgroundColor: const Color.fromARGB(255, 7, 0, 0),
+                      foregroundColor: const Color.fromARGB(255, 241, 235, 235),
+                      shape: RoundedRectangleBorder(
+                        borderRadius: BorderRadius.circular(10),
+                      )
+                    ),
                     child: Text('Diminuir humor'),
                   ),
                   TextButton(
@@ -69,6 +80,13 @@ class _HumorViewState extends State<HumorView> {
                       print(_humorController.nivel);
                       print("Aumentar");
                     },
+                    style: TextButton.styleFrom(
+                      backgroundColor: const Color.fromARGB(255, 7, 0, 0),
+                      foregroundColor: const Color.fromARGB(255, 241, 235, 235),
+                      shape: RoundedRectangleBorder(
+                      borderRadius: BorderRadius.circular(10),
+                      )
+                    ),
                     child: Text('Aumentar humor'),
                   ),
                 ],
