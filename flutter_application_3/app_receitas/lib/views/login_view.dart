@@ -12,6 +12,9 @@ class LoginView extends StatefulWidget {
 class _LoginViewState extends State<LoginView> {
   
   final _formKey = GlobalKey<FormState>();
+  final _controladorUsuario = TextEditingController();
+  final _controladorSenha = TextEditingController();
+
   @override
   Widget build(BuildContext context) {
     return Scaffold(
@@ -33,8 +36,31 @@ class _LoginViewState extends State<LoginView> {
                   ),
                   ),
                   TextFormField(
-
-                  )
+                    controller: _controladorUsuario,
+                    decoration: InputDecoration(
+                      labelText: 'Usuário',
+                      hintText: 'Usuário de Acesso',
+                      prefixIcon: Icon(Icons.person)
+                    ),
+                    validator: (usuario){
+                      if(usuario == null || usuario.isEmpty){
+                        return 'Preencha o campo do usuário';
+                      }
+                      return null;
+                    },
+                  ),
+                  ElevatedButton(
+                    onPressed: (){
+                      if(_formKey.currentState!.validate()){
+                        print('Formulário sem erros');
+                      }
+                    }, 
+                    child: Text(
+                      'Entrar',
+                      style: TextStyle(
+                        fontSize: 16
+                      ),
+                    ))
                 ],
               ),
           ),
