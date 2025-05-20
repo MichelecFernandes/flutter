@@ -1,3 +1,4 @@
+import 'package:app_receitas/components/app_bar_component.dart';
 import 'package:flutter/material.dart';
 
 
@@ -11,6 +12,9 @@ class LoginView extends StatefulWidget {
 class _LoginViewState extends State<LoginView> {
   @override
   Widget build(BuildContext context) {
-    return const Placeholder();
+    return Scaffold(
+      appBar: appBar(),
+      
+    );
   }
 }
