@@ -49,10 +49,29 @@ class _LoginViewState extends State<LoginView> {
                       return null;
                     },
                   ),
+                  TextFormField(
+                    controller: _controladorSenha,
+                    decoration: InputDecoration(
+                      labelText: 'Senha',
+                      hintText: 'Digite sua senhas',
+                      prefixIcon: Icon(Icons.password)
+                    ),
+                    validator: (senha){
+                      if(senha == null || senha.isEmpty){
+                        return 'Preencha o campo do usuário';
+                      }
+
+                      if(senha.lenght < 4){
+                        return 'A senha deve ter pelo menos 4 digitos'
+                      }
+                      return null;
+                    },
+                  ),
                   ElevatedButton(
                     onPressed: (){
                       if(_formKey.currentState!.validate()){
                         print('Formulário sem erros');
+                        print(_controladorUsuario.text);
                       }
                     }, 
                     child: Text(
