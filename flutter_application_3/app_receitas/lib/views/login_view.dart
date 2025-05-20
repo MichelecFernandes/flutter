@@ -61,8 +61,8 @@ class _LoginViewState extends State<LoginView> {
                         return 'Preencha o campo do usuário';
                       }
 
-                      if(senha.lenght < 4){
-                        return 'A senha deve ter pelo menos 4 digitos'
+                      if(senha.length < 4){
+                        return 'A senha deve ter pelo menos 4 digitos';
                       }
                       return null;
                     },
