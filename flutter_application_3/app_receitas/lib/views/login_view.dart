@@ -1,4 +1,5 @@
 import 'package:app_receitas/components/app_bar_component.dart';
+import 'package:app_receitas/controllers/login_controller.dart';
 import 'package:flutter/material.dart';
 
 
@@ -71,8 +72,7 @@ class _LoginViewState extends State<LoginView> {
                   ElevatedButton(
                     onPressed: (){
                       if(_formKey.currentState!.validate()){
-                        print('Formulário sem erros');
-                        print(_controladorUsuario.text);
+                        LoginController.instance.login(_controladorUsuario.text, _controladorSenha.text)
                       }
                     }, 
                     child: Text(
