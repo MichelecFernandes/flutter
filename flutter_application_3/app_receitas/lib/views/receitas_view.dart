@@ -1,4 +1,5 @@
 import 'package:app_receitas/components/app_bar_component.dart';
+import 'package:app_receitas/controllers/usuario.controller.dart';
 import 'package:flutter/material.dart';
 
 class ReceitasView extends StatefulWidget {
@@ -18,6 +19,7 @@ class _ReceitasViewState extends State<ReceitasView> {
       ),
       body: Column(
         children: [
+          Text('Usuário logado: ${UsuarioController.instance.usuario}'),
           TextButton(
             onPressed: (){
               Navigator.of(context).pop();
