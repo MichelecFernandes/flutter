@@ -30,7 +30,8 @@ class _LoginViewState extends State<LoginView> {
               child: Column(
                 children: [
                   Text(
-                    'Acessar sua conta',              style: TextStyle(
+                    'Acessar sua conta',              
+                    style: TextStyle(
                     fontSize: 20,
                     fontWeight: FontWeight.w600
                   ),
@@ -53,7 +54,7 @@ class _LoginViewState extends State<LoginView> {
                     controller: _controladorSenha,
                     decoration: InputDecoration(
                       labelText: 'Senha',
-                      hintText: 'Digite sua senhas',
+                      hintText: 'Digite sua senha',
                       prefixIcon: Icon(Icons.password)
                     ),
                     validator: (senha){
