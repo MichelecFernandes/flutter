@@ -72,6 +72,9 @@ class _LoginViewState extends State<LoginView> {
                       return null;
                     },
                   ),
+                  SizedBox(
+                    height: 20,
+                  ),
                   ElevatedButton(
                     onPressed: (){
                       if(_formKey.currentState!.validate()){
