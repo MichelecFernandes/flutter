@@ -29,3 +29,11 @@ nivel
 
 # Atualizar a pagina(tipo F5)
 setState - responsavel por atualizar a pagina a cada atualizacao
+
+# Navegar entre as páginas
+
+Navigator - utiliza o navigator para fazer a navegação
+
+utilizar o push.replacement - ele substitui toda a tela
+utilizar o push - ele deixa a tela sobre a outra
+utilzar o pop - permite que eu volte na tela anterior

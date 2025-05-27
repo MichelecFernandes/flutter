@@ -72,7 +72,12 @@ class _LoginViewState extends State<LoginView> {
                   ElevatedButton(
                     onPressed: (){
                       if(_formKey.currentState!.validate()){
-                        LoginController.instance.login(_controladorUsuario.text, _controladorSenha.text)
+                        bool login = LoginController.instance.login(_controladorUsuario.text, _controladorSenha.text);
+                        print(login);
+
+                        if(login){
+                          Navigator.of(context).pushNamed('/receitas');
+                        }
                       }
                     }, 
                     child: Text(
