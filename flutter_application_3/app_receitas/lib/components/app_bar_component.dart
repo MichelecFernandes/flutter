@@ -5,6 +5,6 @@ AppBar appBar({bool leading = true, IconData? icone, String titulo = '', Color? 
     leading: leading ? Icon(icone) : null,
     title: Text(titulo),
     foregroundColor: Colors.white,
-    backgroundColor: corDeFundo ?? Colors.orangeAccent,
+    backgroundColor: corDeFundo ??  const Color.fromARGB(255, 41, 1, 68),
   );
 }

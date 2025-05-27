@@ -90,6 +90,14 @@ class _LoginViewState extends State<LoginView> {
                         }
                       }
                     }, 
+                    style: ElevatedButton.styleFrom(
+                      backgroundColor: const Color.fromARGB(255, 41, 1, 68),
+                      foregroundColor: const Color.fromARGB(255, 255, 255, 255),
+                      padding: EdgeInsets.symmetric(
+                        horizontal: 32,
+                        vertical: 12
+                      )
+                    ),
                     child: Text(
                       'Entrar',
                       style: TextStyle(
