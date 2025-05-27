@@ -55,11 +55,11 @@ class _LoginViewState extends State<LoginView> {
                     decoration: InputDecoration(
                       labelText: 'Senha',
                       hintText: 'Digite sua senha',
-                      prefixIcon: Icon(Icons.password)
+                      prefixIcon: Icon(Icons.lock)
                     ),
                     validator: (senha){
                       if(senha == null || senha.isEmpty){
-                        return 'Preencha o campo do usuário';
+                        return 'Preencha o campo da senha';
                       }
 
                       if(senha.length < 4){
