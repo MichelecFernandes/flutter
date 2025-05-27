@@ -1,4 +1,5 @@
 import 'package:app_receitas/components/app_bar_component.dart';
+import 'package:app_receitas/components/snack_bar_component.dart';
 import 'package:app_receitas/controllers/login_controller.dart';
 import 'package:flutter/material.dart';
 
@@ -59,6 +60,7 @@ class _LoginViewState extends State<LoginView> {
                       hintText: 'Digite sua senha',
                       prefixIcon: Icon(Icons.lock)
                     ),
+                    obscureText: true,
                     validator: (senha){
                       if(senha == null || senha.isEmpty){
                         return 'Preencha o campo da senha';
@@ -78,6 +80,13 @@ class _LoginViewState extends State<LoginView> {
 
                         if(login){
                           Navigator.of(context).pushNamed('/receitas');
+                        }else{
+                          ScaffoldMessenger.of(context).showSnackBar(
+                            snackBar(
+                              mensagem: 'Deu erro ao logar', 
+                              corFundo: const Color.fromARGB(255, 59, 12, 8)
+                            )
+                          );
                         }
                       }
                     }, 
