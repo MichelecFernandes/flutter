@@ -29,6 +29,7 @@ class _LoginViewState extends State<LoginView> {
           child: Form(
               key: _formKey,
               child: Column(
+                mainAxisAlignment: MainAxisAlignment.center,
                 children: [
                   Text(
                     'Acessar sua conta',              
