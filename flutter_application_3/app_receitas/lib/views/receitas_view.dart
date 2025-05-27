@@ -1,3 +1,4 @@
+import 'package:app_receitas/components/app_bar_component.dart';
 import 'package:flutter/material.dart';
 
 class ReceitasView extends StatefulWidget {
@@ -10,6 +11,20 @@ class ReceitasView extends StatefulWidget {
 class _ReceitasViewState extends State<ReceitasView> {
   @override
   Widget build(BuildContext context) {
-    return const Placeholder();
+    return Scaffold(
+      appBar: appBar(
+        icone: Icons.receipt,
+        titulo: 'App de Receitas',
+      ),
+      body: Column(
+        children: [
+          TextButton(
+            onPressed: (){
+              Navigator.of(context).pop();
+            }, 
+            child: Text('Voltar'))
+        ],
+      )
+    );
   }
 }
