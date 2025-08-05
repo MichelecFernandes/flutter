@@ -1,6 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:multi_app/shared/app_constants.dart';
-import 'package:multi_app/shared/app_theme.dart';
+
 
 class HomePage extends StatelessWidget {
   const HomePage({super.key});
@@ -31,6 +31,7 @@ class HomePage extends StatelessWidget {
               Text(
                 AppConstants.appSlogan,
                 textAlign: TextAlign.center,
+                style: Theme.of(context).textTheme.bodyLarge,
               ),
           ],
         ),
