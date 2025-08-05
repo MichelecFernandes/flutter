@@ -5,7 +5,8 @@ class AppTheme {
     return ThemeData(
       useMaterial3: true,
       brightness: Brightness.light, 
-      scaffoldBackgroundColor: Colors.white
+      scaffoldBackgroundColor: Colors.white, 
+      primaryColor: const Color.fromARGB(255, 193, 223, 194)
     );
   }
 
@@ -13,7 +14,8 @@ class AppTheme {
     return ThemeData(
       useMaterial3: true,
       brightness: Brightness.dark,
-      scaffoldBackgroundColor: const Color.fromARGB(255, 5, 69, 88)
+      scaffoldBackgroundColor: const Color.fromARGB(255, 5, 69, 88),
+      primaryColor: const Color.fromARGB(77, 11, 253, 112)
     );
   }
 }
