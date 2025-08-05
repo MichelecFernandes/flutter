@@ -16,7 +16,7 @@ class AppTheme {
       useMaterial3: true,
       brightness: Brightness.dark,
       scaffoldBackgroundColor: const Color.fromARGB(255, 5, 69, 88),
-      primaryColor: const Color.fromARGB(77, 11, 253, 112)
+      primaryColor: const Color.fromARGB(77, 229, 255, 240)
     );
   }
 }

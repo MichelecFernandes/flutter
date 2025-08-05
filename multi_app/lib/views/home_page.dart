@@ -28,6 +28,10 @@ class HomePage extends StatelessWidget {
                 fontWeight: FontWeight.bold,
                 color: Theme.of(context).primaryColor
               )),
+              Text(
+                AppConstants.appSlogan,
+                textAlign: TextAlign.center,
+              ),
           ],
         ),
       ),
