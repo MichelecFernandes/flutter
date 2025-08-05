@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:multi_app/shared/app_constants.dart';
 import 'package:multi_app/shared/app_theme.dart';
 
 class HomePage extends StatelessWidget {
@@ -18,10 +19,18 @@ class HomePage extends StatelessWidget {
             Icon(
               Icons.dashboard,
               size: 100,
-              color: Theme.of(context).primaryColor,)
+              color: Theme.of(context).primaryColor,
+            ),
+            Text(
+              AppConstants.appName,
+              textAlign: TextAlign.center,
+              style: Theme.of(context).textTheme.headlineMedium!.copyWith(
+                fontWeight: FontWeight.bold,
+                color: Theme.of(context).primaryColor
+              )),
           ],
         ),
-      )
+      ),
     );
   }
 }

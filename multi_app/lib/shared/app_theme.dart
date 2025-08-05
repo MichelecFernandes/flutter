@@ -6,7 +6,8 @@ class AppTheme {
       useMaterial3: true,
       brightness: Brightness.light, 
       scaffoldBackgroundColor: Colors.white, 
-      primaryColor: const Color.fromARGB(255, 193, 223, 194)
+      primaryColor: const Color.fromARGB(255, 193, 223, 194),
+      
     );
   }
 
