@@ -3,7 +3,6 @@ import 'package:multi_app/components/app_button.dart';
 import 'package:multi_app/components/custom_text_field.dart';
 import 'package:multi_app/shared/app_constants.dart';
 
-
 class LoginPage extends StatefulWidget {
   const LoginPage({super.key});
 
@@ -12,6 +11,17 @@ class LoginPage extends StatefulWidget {
 }
 
 class _LoginPageState extends State<LoginPage> {
+  final _formKey = GlobalKey<FormState>();
+  final _userNameController = TextEditingController();
+  final _passwordController = TextEditingController();
+
+  @override
+  void dispose() {
+    _userNameController.dispose();
+    _passwordController.dispose();
+    super.dispose();
+  }
+
   @override
   Widget build(BuildContext context) {
     return Scaffold(
@@ -22,20 +32,17 @@ class _LoginPageState extends State<LoginPage> {
             mainAxisAlignment: MainAxisAlignment.center,
             crossAxisAlignment: CrossAxisAlignment.stretch,
             children: [
-              Text(
-                AppConstants.appLoginMsg,
-                textAlign: TextAlign.center,
-              ),
+              Text(AppConstants.appLoginMsg, textAlign: TextAlign.center),
               const SizedBox(height: 32.0),
               CustomTextField(label: 'Usuário'),
               const SizedBox(height: 16.0),
               CustomTextField(label: 'Senha'),
               const SizedBox(height: 16.0),
-              AppButton(text: 'Entrar', onPressed: (){})
+              AppButton(text: 'Entrar', onPressed: () {}),
             ],
-
-          )),
+          ),
         ),
+      ),
     );
   }
 }
