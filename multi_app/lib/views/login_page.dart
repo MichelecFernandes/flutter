@@ -1,6 +1,8 @@
 import 'package:flutter/material.dart';
 import 'package:multi_app/components/app_button.dart';
+import 'package:multi_app/components/custom_snack_bar.dart';
 import 'package:multi_app/components/custom_text_field.dart';
+import 'package:multi_app/controllers/auth_controller.dart';
 import 'package:multi_app/shared/app_constants.dart';
 
 class LoginPage extends StatefulWidget {
@@ -21,6 +23,27 @@ class _LoginPageState extends State<LoginPage> {
     _userNameController.dispose();
     _passwordController.dispose();
     super.dispose();
+  }
+
+  Future<void> _login() async {
+    if (_formKey.currentState!.validate()) {
+      bool login = await AuthController.instance.login(
+        _userNameController.text,
+        _passwordController.text,
+      );
+
+      if(login){
+        //Navegação
+      }else{
+        ScaffoldMessenger.of(context).showSnackBar(
+          customSnackBar(
+            message: 'As credenciais informadas estão incorretas',
+            backgroundColor: const Color.fromARGB(255, 87, 20, 20),
+            icon: Icons.error_outline
+          )
+        );
+      }
+    }
   }
 
   @override
@@ -74,12 +97,7 @@ class _LoginPageState extends State<LoginPage> {
                 },
               ),
               const SizedBox(height: 16.0),
-              AppButton(text: 'Entrar', 
-              onPressed: () {
-                if(_formKey.currentState!.validate()){
-                  
-                }
-              }),
+              AppButton(text: 'Entrar', onPressed: _login),
             ],
           ),
         ),
