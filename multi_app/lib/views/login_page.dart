@@ -14,6 +14,7 @@ class _LoginPageState extends State<LoginPage> {
   final _formKey = GlobalKey<FormState>();
   final _userNameController = TextEditingController();
   final _passwordController = TextEditingController();
+  bool _obscureText = true;
 
   @override
   void dispose() {
@@ -28,6 +29,7 @@ class _LoginPageState extends State<LoginPage> {
       body: Padding(
         padding: EdgeInsets.all(24.0),
         child: Form(
+          key: _formKey,
           child: Column(
             mainAxisAlignment: MainAxisAlignment.center,
             crossAxisAlignment: CrossAxisAlignment.stretch,
@@ -48,13 +50,36 @@ class _LoginPageState extends State<LoginPage> {
               ),
 
               const SizedBox(height: 16.0),
-              CustomTextField(label: 'Senha',
-              hint: 'Digite sua senha',
-              controller: _passwordController,
-              prefixIcon: Icon(Icons.lock),
-              obscureText: true,),
+              CustomTextField(
+                label: 'Senha',
+                hint: 'Digite sua senha',
+                controller: _passwordController,
+                prefixIcon: Icon(Icons.lock),
+                obscureText: _obscureText,
+                suffixIcon: IconButton(
+                  onPressed: () {
+                    setState(() {
+                      _obscureText = !_obscureText;
+                    });
+                  },
+                  icon: Icon(
+                    _obscureText ? Icons.visibility_off : Icons.visibility,
+                  ),
+                ),
+                validator: (password) {
+                  if (password == null || password.isEmpty) {
+                    return 'Preecha o campo senha';
+                  }
+                  return null;
+                },
+              ),
               const SizedBox(height: 16.0),
-              AppButton(text: 'Entrar', onPressed: () {}),
+              AppButton(text: 'Entrar', 
+              onPressed: () {
+                if(_formKey.currentState!.validate()){
+                  
+                }
+              }),
             ],
           ),
         ),
