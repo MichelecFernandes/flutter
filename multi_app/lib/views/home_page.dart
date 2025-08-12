@@ -29,12 +29,11 @@ class HomePage extends StatelessWidget {
                       Text(
                         AppConstants.appName,
                         textAlign: TextAlign.center,
-                        style: Theme.of(
-                          context,
-                        ).textTheme.headlineMedium!.copyWith(
-                          fontWeight: FontWeight.bold,
-                          color: Theme.of(context).primaryColor,
-                        ),
+                        style: Theme.of(context).textTheme.headlineMedium!
+                            .copyWith(
+                              fontWeight: FontWeight.bold,
+                              color: Theme.of(context).primaryColor,
+                            ),
                       ),
                       Text(
                         AppConstants.appSlogan,
@@ -42,9 +41,18 @@ class HomePage extends StatelessWidget {
                         style: Theme.of(context).textTheme.bodyLarge,
                       ),
                       const SizedBox(height: 40.0),
-                      AppButton(text: 'Entrar', onPressed: () {}),
+                      AppButton(
+                        text: 'Entrar',
+                        onPressed: () {
+                          Navigator.of(context).pushNamed('/login');
+                        },
+                      ),
                       const SizedBox(height: 24.0),
-                      AppButton(text: 'Cadastrar-se', onPressed: () {}),
+                      AppButton(
+                        text: 'Cadastrar-se', 
+                        onPressed: () {
+                          
+                        }),
                     ],
                   ),
                 ),
