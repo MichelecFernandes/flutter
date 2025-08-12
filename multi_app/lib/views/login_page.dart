@@ -34,9 +34,25 @@ class _LoginPageState extends State<LoginPage> {
             children: [
               Text(AppConstants.appLoginMsg, textAlign: TextAlign.center),
               const SizedBox(height: 32.0),
-              CustomTextField(label: 'Usuário'),
+              CustomTextField(
+                label: 'Usuário',
+                hint: 'Usuário de acesso ao sistema',
+                controller: _userNameController,
+                prefixIcon: Icon(Icons.person_2_outlined),
+                validator: (username) {
+                  if (username == null || username.isEmpty) {
+                    return 'Preencha o campo do usuário';
+                  }
+                  return null;
+                },
+              ),
+
               const SizedBox(height: 16.0),
-              CustomTextField(label: 'Senha'),
+              CustomTextField(label: 'Senha',
+              hint: 'Digite sua senha',
+              controller: _passwordController,
+              prefixIcon: Icon(Icons.lock),
+              obscureText: true,),
               const SizedBox(height: 16.0),
               AppButton(text: 'Entrar', onPressed: () {}),
             ],
