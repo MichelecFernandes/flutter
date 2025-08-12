@@ -8,37 +8,39 @@ class HomePage extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      body: SingleChildScrollView(
-        padding: EdgeInsets.all(24.0),
-        child: Column(
-          // MainAxi centralizar na vertical
-          mainAxisAlignment: MainAxisAlignment.center,
-          // CrossAxi centraliza na horizontal
-          crossAxisAlignment: CrossAxisAlignment.stretch,
-          children: [
-            Icon(
-              Icons.dashboard,
-              size: 100,
-              color: Theme.of(context).primaryColor,
-            ),
-            Text(
-              AppConstants.appName,
-              textAlign: TextAlign.center,
-              style: Theme.of(context).textTheme.headlineMedium!.copyWith(
-                fontWeight: FontWeight.bold,
+      body: Center(
+        child: SingleChildScrollView(
+          padding: EdgeInsets.all(24.0),
+          child: Column(
+            // MainAxi centralizar na vertical
+            mainAxisAlignment: MainAxisAlignment.center,
+            // CrossAxi centraliza na horizontal
+            crossAxisAlignment: CrossAxisAlignment.stretch,
+            children: [
+              Icon(
+                Icons.dashboard,
+                size: 100,
                 color: Theme.of(context).primaryColor,
               ),
-            ),
-            Text(
-              AppConstants.appSlogan,
-              textAlign: TextAlign.center,
-              style: Theme.of(context).textTheme.bodyLarge,
-            ),
-            const SizedBox(height: 40.0),
-            AppButton(text: 'Entrar', onPressed: () {}),
-            const SizedBox(height: 24.0),
-            AppButton(text: 'Cadastrar-se', onPressed: () {}),
-          ],
+              Text(
+                AppConstants.appName,
+                textAlign: TextAlign.center,
+                style: Theme.of(context).textTheme.headlineMedium!.copyWith(
+                  fontWeight: FontWeight.bold,
+                  color: Theme.of(context).primaryColor,
+                ),
+              ),
+              Text(
+                AppConstants.appSlogan,
+                textAlign: TextAlign.center,
+                style: Theme.of(context).textTheme.bodyLarge,
+              ),
+              const SizedBox(height: 40.0),
+              AppButton(text: 'Entrar', onPressed: () {}),
+              const SizedBox(height: 24.0),
+              AppButton(text: 'Cadastrar-se', onPressed: () {}),
+            ],
+          ),
         ),
       ),
     );
