@@ -57,6 +57,11 @@ class AuthController {
       return false;
     }
 
-    return true;
   }
+      Future<bool> logout() async {
+      _sharedPreferences = await SharedPreferences.getInstance();
+      await _sharedPreferences.remove('accessToken');
+      await _sharedPreferences.clear();
+      return true;
+    } 
 }
