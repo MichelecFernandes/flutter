@@ -95,6 +95,9 @@ class _LoginPageState extends State<LoginPage> {
                   }
                   return null;
                 },
+                onFieldSubmitted: (_) {
+                  _login();
+                },
               ),
               const SizedBox(height: 16.0),
               AppButton(text: 'Entrar', onPressed: _login),
