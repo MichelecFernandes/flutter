@@ -26,6 +26,8 @@ class _LoginPageState extends State<LoginPage> {
   }
 
   Future<void> _login() async {
+    final navigator = ScaffoldMessenger.of(context);
+
     if (_formKey.currentState!.validate()) {
       bool login = await AuthController.instance.login(
         _userNameController.text,
@@ -34,8 +36,9 @@ class _LoginPageState extends State<LoginPage> {
 
       if(login){
         //Navegação
+        Navigator.of(context).pushReplacementNamed('/dashboard');
       }else{
-        ScaffoldMessenger.of(context).showSnackBar(
+        navigator.showSnackBar(
           customSnackBar(
             message: 'As credenciais informadas estão incorretas',
             backgroundColor: const Color.fromARGB(255, 87, 20, 20),

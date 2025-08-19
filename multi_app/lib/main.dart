@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:multi_app/shared/app_constants.dart';
 import 'package:multi_app/shared/app_theme.dart';
+import 'package:multi_app/views/dashboard_page.dart';
 import 'package:multi_app/views/home_page.dart';
 import 'package:multi_app/views/login_page.dart';
 
@@ -22,7 +23,8 @@ class MyApp extends StatelessWidget {
       initialRoute: '/',
       routes: {
         '/': (context) => HomePage(),
-        '/login': (context) => LoginPage()
+        '/login': (context) => LoginPage(),
+        '/dashboard': (context) => DashboardPage(),
       },
     );
   }
