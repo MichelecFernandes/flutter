@@ -4,6 +4,7 @@ import 'package:multi_app/controllers/auth_controller.dart';
 import 'package:multi_app/controllers/user_controller.dart';
 import 'package:multi_app/models/user.dart';
 import 'package:multi_app/shared/app_constants.dart';
+import 'package:multi_app/views/profile_page.dart';
 
 class DashboardPage extends StatefulWidget {
   const DashboardPage({super.key});
@@ -45,6 +46,18 @@ class _DashboardPageState extends State<DashboardPage> {
         actions: [
           PopupMenuButton(
             itemBuilder: (context) => [
+              PopupMenuItem(
+                child: Text('Perfil'),
+                onTap: () {
+                  if(_loggedUser != null) {
+                    // Navega para tela de perfil
+                    Navigator.of(context).push(MaterialPageRoute(
+                      builder: (context) => ProfilePage(user: _loggedUser!),
+                    ));
+                  }
+
+                },
+              ),
               PopupMenuItem(
                 child: Text('Sair'),
                 onTap: () async {
