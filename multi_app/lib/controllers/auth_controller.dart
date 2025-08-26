@@ -29,7 +29,7 @@ class AuthController {
       );
       await _sharedPreferences.setInt(
         'userId',
-        json.decode(response.body)['userId'],
+        json.decode(response.body)['id'],
       );
       return true;
     } else {
@@ -56,12 +56,12 @@ class AuthController {
       print(e);
       return false;
     }
-
   }
-      Future<bool> logout() async {
-      _sharedPreferences = await SharedPreferences.getInstance();
-      await _sharedPreferences.remove('accessToken');
-      await _sharedPreferences.clear();
-      return true;
-    } 
+
+  Future<bool> logout() async {
+    _sharedPreferences = await SharedPreferences.getInstance();
+    await _sharedPreferences.remove('accessToken');
+    await _sharedPreferences.clear();
+    return true;
+  }
 }
