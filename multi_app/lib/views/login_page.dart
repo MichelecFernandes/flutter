@@ -3,7 +3,12 @@ import 'package:multi_app/components/app_button.dart';
 import 'package:multi_app/components/custom_snack_bar.dart';
 import 'package:multi_app/components/custom_text_field.dart';
 import 'package:multi_app/controllers/auth_controller.dart';
+import 'package:multi_app/providers/user_notifier.dart';
 import 'package:multi_app/shared/app_constants.dart';
+import 'package:provider/provider.dart';
+
+
+
 
 class LoginPage extends StatefulWidget {
   const LoginPage({super.key});
@@ -28,6 +33,8 @@ class _LoginPageState extends State<LoginPage> {
   Future<void> _login() async {
     final messenger = ScaffoldMessenger.of(context);
     final navigator = Navigator.of(context);
+    final currentContext = context.read<UserNotifier>();
+
     if (_formKey.currentState!.validate()) {
       bool login = await AuthController.instance.login(
         _userNameController.text,
@@ -36,6 +43,7 @@ class _LoginPageState extends State<LoginPage> {
 
       if(login){
         //Navegação
+        currentContext.loadUser();
         navigator.pushReplacementNamed('/dashboard');
       }else{
         messenger.showSnackBar(
