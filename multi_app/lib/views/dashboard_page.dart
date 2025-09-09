@@ -3,6 +3,7 @@ import 'package:multi_app/components/app_bar.dart';
 import 'package:multi_app/controllers/auth_controller.dart';
 import 'package:multi_app/providers/user_notifier.dart';
 import 'package:multi_app/shared/app_constants.dart';
+import 'package:multi_app/views/dashboards_widgets/greeting_widget.dart';
 import 'package:multi_app/views/profile_page.dart';
 import 'package:provider/provider.dart';
 
@@ -84,6 +85,22 @@ class _DashboardPageState extends State<DashboardPage> {
             ),
           ),
         ],
+      ),
+      body: SingleChildScrollView(
+        child: Padding(
+          padding: const EdgeInsets.all(16.0),
+          child: Column(
+            crossAxisAlignment: CrossAxisAlignment.start,
+            children: [
+              GreetingWidget(),
+             
+          
+              // Saudação personalizada
+              
+              // Outros widgets do dashboard podem ser adicionados aqui
+            ],
+          ),
+        ),
       ),
     );
   }
